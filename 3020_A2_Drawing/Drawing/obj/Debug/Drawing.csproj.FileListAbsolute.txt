@@ -1,0 +1,9 @@
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Drawing\Drawing\bin\Debug\Drawing.exe.config
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Drawing\Drawing\bin\Debug\Drawing.exe
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Drawing\Drawing\bin\Debug\Drawing.pdb
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Drawing\Drawing\obj\Debug\Drawing.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Drawing\Drawing\obj\Debug\Drawing.Form1.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Drawing\Drawing\obj\Debug\Drawing.Properties.Resources.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Drawing\Drawing\obj\Debug\Drawing.csproj.GenerateResource.Cache
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Drawing\Drawing\obj\Debug\Drawing.exe
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Drawing\Drawing\obj\Debug\Drawing.pdb
