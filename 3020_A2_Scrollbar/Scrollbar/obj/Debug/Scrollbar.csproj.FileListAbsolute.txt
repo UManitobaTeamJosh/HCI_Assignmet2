@@ -1,0 +1,9 @@
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Scrollbar\Scrollbar\bin\Debug\Scrollbar.exe.config
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Scrollbar\Scrollbar\bin\Debug\Scrollbar.exe
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Scrollbar\Scrollbar\bin\Debug\Scrollbar.pdb
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Scrollbar\Scrollbar\obj\Debug\Scrollbar.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Scrollbar\Scrollbar\obj\Debug\Scrollbar.Properties.Resources.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Scrollbar\Scrollbar\obj\Debug\Scrollbar.csproj.GenerateResource.Cache
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Scrollbar\Scrollbar\obj\Debug\Scrollbar.exe
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Scrollbar\Scrollbar\obj\Debug\Scrollbar.pdb
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Scrollbar\Scrollbar\obj\Debug\Scrollbar.Form2.resources

@@ -1,0 +1,9 @@
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_keyboard\bin\Debug\3020_A2_keyboard.exe.config
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_keyboard\bin\Debug\3020_A2_keyboard.exe
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_keyboard\bin\Debug\3020_A2_keyboard.pdb
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_keyboard\obj\Debug\3020_A2_keyboard.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_keyboard\obj\Debug\_3020_A2_keyboard.Form1.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_keyboard\obj\Debug\_3020_A2_keyboard.Properties.Resources.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_keyboard\obj\Debug\3020_A2_keyboard.csproj.GenerateResource.Cache
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_keyboard\obj\Debug\3020_A2_keyboard.exe
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_keyboard\obj\Debug\3020_A2_keyboard.pdb

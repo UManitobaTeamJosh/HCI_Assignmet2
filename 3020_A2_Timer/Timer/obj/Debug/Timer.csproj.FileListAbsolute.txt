@@ -1,0 +1,9 @@
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Timer\Timer\bin\Debug\Timer.exe.config
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Timer\Timer\bin\Debug\Timer.exe
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Timer\Timer\bin\Debug\Timer.pdb
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Timer\Timer\obj\Debug\Timer.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Timer\Timer\obj\Debug\Timer.Form1.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Timer\Timer\obj\Debug\Timer.Properties.Resources.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Timer\Timer\obj\Debug\Timer.csproj.GenerateResource.Cache
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Timer\Timer\obj\Debug\Timer.exe
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_Timer\Timer\obj\Debug\Timer.pdb
