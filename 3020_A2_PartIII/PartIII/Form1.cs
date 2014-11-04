@@ -26,11 +26,17 @@ namespace PartIII {
 
         private static readonly String FILE_NAME = "xmlSource.xml";
         private List<Student> studentList;
+        private ScatterForm scatterForm;
 
         public Form1() {
             InitializeComponent();
             studentList = new List<Student>();
+            scatterForm = new ScatterForm(this,studentList);
             loadXML();
+        }
+
+        public void scatterFormClose() {
+            scatterForm = new ScatterForm(this,studentList);
         }
 
         /*
@@ -38,8 +44,8 @@ namespace PartIII {
          */
         public void addStudent(Student newStudent) {
             if (newStudent != null && newStudent.isValid()) {
-                populateTable();
                 studentList.Add(newStudent);
+                populateTable();
             }
         }
         
@@ -64,6 +70,8 @@ namespace PartIII {
                     }
                 }
             }
+            //Whenver we update this table, we should update the chart too
+            scatterForm.populateChart();
         }//populateTable
 
         /*
@@ -91,6 +99,7 @@ namespace PartIII {
             } else {
                 MessageBox.Show("xmlSource.xml not found. No data loaded.");
             }
+            populateTable();
         }//loadXML
 
         /*
@@ -181,6 +190,17 @@ namespace PartIII {
             }
             xdoc.Save(FILE_NAME);
             MessageBox.Show("File saved");
+        }
+
+        /*
+         *  Shows the scatter form.
+         *  We keep the scatter form as an instance variable so the user cannot
+         *  open multiple charts. We communicate that the chart has closed and
+         *  that another must be instantiated by having the ScatterForm call
+         *  scatterFormClose on it's parent Form1 (this). 
+         */
+        private void button_chart_Click(object sender, EventArgs e) {
+            scatterForm.Show();
         }
     }//class Form1
 }

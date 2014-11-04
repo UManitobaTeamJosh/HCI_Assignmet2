@@ -39,6 +39,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_chart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +101,7 @@
             this.trackBar1.Size = new System.Drawing.Size(588, 56);
             this.trackBar1.TabIndex = 1;
             this.trackBar1.TickFrequency = 10;
+            this.trackBar1.Value = 99;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label1
@@ -166,11 +168,22 @@
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
+            // button_chart
+            // 
+            this.button_chart.Location = new System.Drawing.Point(480, 48);
+            this.button_chart.Name = "button_chart";
+            this.button_chart.Size = new System.Drawing.Size(106, 23);
+            this.button_chart.TabIndex = 7;
+            this.button_chart.Text = "View Chart";
+            this.button_chart.UseVisualStyleBackColor = true;
+            this.button_chart.Click += new System.EventHandler(this.button_chart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 417);
+            this.Controls.Add(this.button_chart);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_edit);
             this.Controls.Add(this.button_new);
@@ -208,6 +221,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.Button button_chart;
     }
 }
 

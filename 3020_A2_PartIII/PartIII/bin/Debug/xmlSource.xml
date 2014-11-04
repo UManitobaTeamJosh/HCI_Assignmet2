@@ -27,4 +27,40 @@
     <phone>2344567</phone>
     <address>Toronto</address>
   </person>
+  <person>
+    <firstname>Joshua</firstname>
+    <lastname>Chan</lastname>
+    <age>20</age>
+    <gender>Male</gender>
+    <year>3</year>
+    <phone>9876544</phone>
+    <address>Winnipeg</address>
+  </person>
+  <person>
+    <firstname>Jenn</firstname>
+    <lastname>Li</lastname>
+    <age>20</age>
+    <gender>Female</gender>
+    <year>3</year>
+    <phone>4566879</phone>
+    <address>Winnipeg</address>
+  </person>
+  <person>
+    <firstname>William</firstname>
+    <lastname>Li</lastname>
+    <age>24</age>
+    <gender>Male</gender>
+    <year>Master's</year>
+    <phone>4567899</phone>
+    <address>Winnipeg</address>
+  </person>
+  <person>
+    <firstname>Austin</firstname>
+    <lastname>Tecks</lastname>
+    <age>24</age>
+    <gender>Male</gender>
+    <year>Master's</year>
+    <phone>123657</phone>
+    <address>USA</address>
+  </person>
 </people>

@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
+ * COMP 3020 Assignment 2, Part III
+ * Joshua Chan 7722727
+ * Josh Lemer 7634755
+ * 
+ *  Student represents a student. It functions mostly as a data container.
+*/
 namespace PartIII {
 
     public class Student {
@@ -52,6 +58,20 @@ namespace PartIII {
             return result;
         }
 
+        /*
+         *  Returns an integer representation of the Student's year.
+         */
+        public int yearValue() {
+            int result = 0;
+            if (year.Equals("1") || year.Equals("2") || year.Equals("3")) {
+                result = Convert.ToInt32(year);
+            }else if (year.Equals("Master's")) {
+                result = 4;
+            }else if (year.Equals("Ph.D")) {
+                result = 5;
+            }
+            return result;
+        }
         
         public override String ToString() {
             return firstname + lastname + age.ToString() + gender + year + phone + address;

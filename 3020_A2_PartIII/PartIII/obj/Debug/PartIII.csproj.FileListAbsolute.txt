@@ -21,3 +21,11 @@ C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_
 C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIIIV2\obj\Debug\PartIII.csproj.GenerateResource.Cache
 C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIIIV2\bin\Debug\PartIII.exe
 C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIIIV2\bin\Debug\PartIII.pdb
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIII\bin\Debug\PartIII.exe
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIII\bin\Debug\PartIII.pdb
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIII\obj\Debug\PartIII.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIII\obj\Debug\PartIII.Form1.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIII\obj\Debug\PartIII.Properties.Resources.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIII\obj\Debug\PartIII.ScatterForm.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIII\obj\Debug\PartIII.StudentEditForm.resources
+C:\Users\Joshua\Documents\Notes\School\COMP_3020_HCI\A2\A_KeyboardInput\3020_A2_PartIII\PartIII\obj\Debug\PartIII.csproj.GenerateResource.Cache
