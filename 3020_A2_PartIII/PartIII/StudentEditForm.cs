@@ -26,7 +26,7 @@ using System.Windows.Forms;
 namespace PartIII {
     public partial class StudentEditForm : Form {
 
-        private ListViewItem student;
+        private Student student;
         private Form1 parent;
         private Control[] controls;
         private String[] controlNames;
@@ -34,35 +34,32 @@ namespace PartIII {
         public StudentEditForm() {
             InitializeComponent();
             controls = new Control[7];
-                controls[0] = textbox_firstName;
-                controls[1] = textbox_lastName;
-                controls[2] = textbox_age;
-                controls[3] = combobox_gender;
-                controls[5] = textbox_phone;
-                controls[4] = combobox_year;
-                controls[6] = textbox_address;
+            controls[0] = textbox_firstName;
+            controls[1] = textbox_lastName;
+            controls[2] = textbox_age;
+            controls[3] = combobox_gender;
+            controls[5] = textbox_phone;
+            controls[4] = combobox_year;
+            controls[6] = textbox_address;
             controlNames = new String[7];
-                controlNames[0] = "First name";
-                controlNames[1] = "Last name";
-                controlNames[2] = "Age";
-                controlNames[3] = "Gender";
-                controlNames[5] = "Phone";
-                controlNames[4] = "Year";
-                controlNames[6] = "Address";
+            controlNames[0] = "First name";
+            controlNames[1] = "Last name";
+            controlNames[2] = "Age";
+            controlNames[3] = "Gender";
+            controlNames[5] = "Phone";
+            controlNames[4] = "Year";
+            controlNames[6] = "Address";
         }
 
         /*
          *  Constructor called on when creating a new Student
          */
-        public StudentEditForm(Form1 parent): this() {
+        public StudentEditForm(Form1 parent):this(){
             this.parent = parent;
         }
 
-        /*
-         *  Constructor called on when editing an existing Student
-         */
-        public StudentEditForm(Form1 parent, ListViewItem item) : this(parent) {
-            student = item;
+        public StudentEditForm(Form1 parent, Student newStudent):this(parent) {
+            this.student = newStudent;
             populateFields();
         }
 
@@ -70,10 +67,14 @@ namespace PartIII {
          *  If editing a Student, fill the fields in with that Student's information.
          */
         private void populateFields() {
-            if (student != null) {
-                for (int a = 0; a < controls.Length; a++) {
-                    controls[a].Text = student.SubItems[a].Text.ToString();
-                }
+            if (student != null && student.isValid()) {
+                textbox_firstName.Text = student.firstname;
+                textbox_lastName.Text = student.lastname;
+                textbox_phone.Text = student.phone;
+                textbox_age.Text = student.age.ToString();
+                textbox_address.Text = student.address;
+                combobox_gender.Text = student.gender;
+                combobox_year.Text = student.year;
             }
         }
 
@@ -115,17 +116,25 @@ namespace PartIII {
         private void button_accept_Click(object sender, EventArgs e) {
             if (validateFields()) {
                 if (student != null && parent!=null) {
-                    ListViewItem item = new ListViewItem(textbox_firstName.Text);
-                    for (int a = 1; a < controls.Length; a++) {
-                        item.SubItems.Add(controls[a].Text);
-                    }
-                    parent.completeEdit(item);
+                    student.firstname = textbox_firstName.Text;
+                    student.lastname = textbox_lastName.Text;
+                    student.age = Convert.ToInt32(textbox_age.Text);
+                    student.gender = combobox_gender.Text;
+                    student.year = combobox_year.Text;
+                    student.phone = textbox_phone.Text;
+                    student.address = textbox_address.Text;
+                    parent.populateTable();
                 } else if(parent!=null){
-                    ListViewItem item = new ListViewItem(textbox_firstName.Text);
-                    for (int a = 1; a < controls.Length; a++) {
-                        item.SubItems.Add(controls[a].Text);
-                    }
-                    parent.addItem(item);
+                    Student newStudent = new Student(
+                        textbox_firstName.Text,
+                        textbox_lastName.Text,
+                        textbox_age.Text,
+                        combobox_gender.Text,
+                        combobox_year.Text,
+                        textbox_phone.Text,
+                        textbox_address.Text
+                    );
+                    parent.addStudent(newStudent);
                 }
                 this.Close();
             }

@@ -16,64 +16,82 @@ using System.Xml.Linq;
 * 
 * Assumes a file with a name corresponding to the variable FILE_NAME exists. If not, if the user
 * ever uses the "Save" button, such a file will be created and used for data storage.
+* 
+* The program can be run with or without an xmlSource.xml file. Any and all saving however
+* will be done to that file, or will create that file if it does not exist.
 */
 
 namespace PartIII {
     public partial class Form1 : Form {
 
         private static readonly String FILE_NAME = "xmlSource.xml";
-        private XDocument xmlSource;
-        private XElement editItem;
+        private List<Student> studentList;
 
         public Form1() {
             InitializeComponent();
+            studentList = new List<Student>();
             loadXML();
-        }
-        
-        /*
-         *  Fills the table with Students from xmlSource whose age is less than that
-         *  selected by trackBar1. Students are added in the order they are found in
-         *  the XDocument.
-         */
-        private void populateTable() {
-            if (xmlSource != null) {
-                listView1.Items.Clear();
-                var data = from item in xmlSource.Descendants("person") 
-                    where Convert.ToInt32(item.Element("age").Value) <= trackBar1.Value
-                    select new{
-                        firstname = item.Element("firstname").Value,
-                        lastname = item.Element("lastname").Value,
-                        age = item.Element("age").Value,
-                        gender = item.Element("gender").Value,
-                        year = item.Element("year").Value,
-                        phone = item.Element("phone").Value,
-                        address = item.Element("address").Value
-                };//query
-                foreach (var p in data) {
-                    ListViewItem item = new ListViewItem(p.firstname);
-                    item.SubItems.Add(p.lastname);
-                    item.SubItems.Add(p.age);
-                    item.SubItems.Add(p.gender);
-                    item.SubItems.Add(p.year);
-                    item.SubItems.Add(p.phone);
-                    item.SubItems.Add(p.address);
-                    listView1.Items.Add(item);
-                }
-            }//if
         }
 
         /*
-         *  Attempt to load an XML file into xmlSource
+         *  Adds a new Student to the table.
+         */
+        public void addStudent(Student newStudent) {
+            if (newStudent != null && newStudent.isValid()) {
+                populateTable();
+                studentList.Add(newStudent);
+            }
+        }
+        
+        /*
+         *  Fills the table with Students from studentList whose age is less than that
+         *  selected by trackBar1. Students are added in the order they are found in
+         *  the studentList.
+         */
+        public void populateTable() {
+            if (studentList != null) {
+                listView1.Items.Clear();
+                foreach (Student student in studentList) {
+                    if (student.age <= trackBar1.Value) {
+                        ListViewItem item = new ListViewItem(student.firstname);
+                        item.SubItems.Add(student.lastname);
+                        item.SubItems.Add(student.age.ToString());
+                        item.SubItems.Add(student.gender);
+                        item.SubItems.Add(student.year);
+                        item.SubItems.Add(student.phone);
+                        item.SubItems.Add(student.address);
+                        listView1.Items.Add(item);
+                    }
+                }
+            }
+        }//populateTable
+
+        /*
+         *  Attempt to load an XML file and put that data into studentList.
          */
         private void loadXML() {
             if (System.IO.File.Exists(FILE_NAME)){
-                xmlSource = XDocument.Load(FILE_NAME);
+                XDocument xmlSource = XDocument.Load(FILE_NAME);
+                var data = from item in xmlSource.Descendants("person")
+                           where true
+                           select new {
+                               firstname = item.Element("firstname").Value,
+                               lastname = item.Element("lastname").Value,
+                               age = item.Element("age").Value,
+                               gender = item.Element("gender").Value,
+                               year = item.Element("year").Value,
+                               phone = item.Element("phone").Value,
+                               address = item.Element("address").Value
+                           };//query
+                foreach (var p in data) {
+                    Student newStudent = new Student(p.firstname, p.lastname, p.age,
+                                                        p.gender, p.year, p.phone, p.address);
+                    studentList.Add(newStudent);
+                }
             } else {
-                //File not found. Instantiate xmlSource ourselves
-                xmlSource = new XDocument(new XElement("people"));
+                MessageBox.Show("xmlSource.xml not found. No data loaded.");
             }
-            
-        }
+        }//loadXML
 
         /*
          *  Redraws the contents of the ListView depending on the age selected.
@@ -83,26 +101,6 @@ namespace PartIII {
             populateTable();
             label1.Text = ("Showing students with age less than : "+trackBar1.Value);
         }
-
-        /*
-         *  Accepts a ListViewItem. Any items passed into this method should be formmatted
-         *  as correct students.
-         *  
-         * This will add the new student to the XDocument and then refresh the ListView.
-         */
-        public void addItem(ListViewItem item) {
-            XElement root = new XElement("person");
-            root.Add(new XElement("firstname",item.SubItems[0].Text));
-            root.Add(new XElement("lastname", item.SubItems[1].Text));
-            root.Add(new XElement("age", item.SubItems[2].Text));
-            root.Add(new XElement("gender", item.SubItems[3].Text));
-            root.Add(new XElement("year", item.SubItems[4].Text));
-            root.Add(new XElement("phone", item.SubItems[5].Text));
-            root.Add(new XElement("address", item.SubItems[6].Text));
-            xmlSource.Element("people").Add(root);
-            populateTable();
-        }
-
 
         /*
          *  Opens a new StudentEditForm, passing this Form1 instance.
@@ -119,9 +117,6 @@ namespace PartIII {
          *  changes are made.
          */
         private void button_delete_Click(object sender, EventArgs e) {
-            /* Using a foreach because it's safer(?) than accessing SelectedItems from a fixed
-             * index, since it's length cannot be determined.
-             */
             foreach (ListViewItem item in listView1.SelectedItems) {
                 //Produce a string representing the entirety of the selected student
                 String value = "";
@@ -129,13 +124,10 @@ namespace PartIII {
                 foreach (ListViewItem.ListViewSubItem currSubItem in subitems) {
                     value += currSubItem.Text.ToString();
                 }
-
-                //Look through the XDocument for a student with exactly the same elements
-                //Remove them if found.
-                var data = xmlSource.Descendants("person").ToList();
-                foreach (XElement el in data) {
-                    if (el.Value.CompareTo(value) == 0) {
-                        el.Remove();
+                foreach (Student student in studentList) {
+                    if (student.ToString().CompareTo(value) == 0) {
+                        studentList.Remove(student);
+                        break;
                     }
                 }
             }//foreach
@@ -154,55 +146,41 @@ namespace PartIII {
          */
         private void button_edit_Click(object sender, EventArgs e){
             foreach (ListViewItem item in listView1.SelectedItems) {
-                StudentEditForm editForm = new StudentEditForm(this,item);
-                editForm.Show();
-            }
-            foreach (ListViewItem item in listView1.SelectedItems) {
                 //Produce a string representing the entirety of the selected student
                 String value = "";
                 ListViewItem.ListViewSubItemCollection subitems = item.SubItems;
                 foreach (ListViewItem.ListViewSubItem currSubItem in subitems) {
                     value += currSubItem.Text.ToString();
                 }
-
-                //Look through the XDocument for a student with exactly the same elements
-                var data = xmlSource.Descendants("person").ToList();
-                foreach (XElement el in data) {
-                    if (el.Value.CompareTo(value) == 0) {
-                        editItem = el;
+                foreach (Student student in studentList) {
+                    if (student.ToString().CompareTo(value) == 0) {
+                        StudentEditForm editForm = new StudentEditForm(this, student);
+                        editForm.Show();
+                        break;
                     }
                 }
             }//foreach
         }
 
         /*
-         *  Called by StudentEditForm to complete an edit.
-         *  
-         *  EditItem should have been set by button_edit_Click. We finish the edit action here
-         *  by deleting the old student and adding its replacement.
-         */
-        public void completeEdit(ListViewItem item) {
-            if (editItem != null) {
-                editItem.Remove();
-                addItem(item);
-                editItem = null;
-            }
-        }
-
-        
-
-        /*
          *  Simply saves the current XDocument to the XML file name specified by the FILE_NAME
          *  constant.
          */
         private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
-            if (System.IO.File.Exists(FILE_NAME)) {
-                xmlSource.Save(FILE_NAME);
-                MessageBox.Show("File saved");
-            } else {
-                xmlSource.Save(FILE_NAME);
-                MessageBox.Show("Could not find xmlSource.xml\nxmlSource.xml created.");
+            XDocument xdoc = new XDocument(new XElement("people"));
+            foreach(Student student in studentList){
+                XElement root = new XElement("person");
+                root.Add(new XElement("firstname",student.firstname));
+                root.Add(new XElement("lastname", student.lastname));
+                root.Add(new XElement("age", student.age.ToString()));
+                root.Add(new XElement("gender", student.gender));
+                root.Add(new XElement("year", student.year));
+                root.Add(new XElement("phone", student.phone));
+                root.Add(new XElement("address", student.address));
+                xdoc.Element("people").Add(root);
             }
+            xdoc.Save(FILE_NAME);
+            MessageBox.Show("File saved");
         }
     }//class Form1
 }

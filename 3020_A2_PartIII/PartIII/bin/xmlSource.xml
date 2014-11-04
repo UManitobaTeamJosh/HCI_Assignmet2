@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<people>
+  <person>
+    <firstname>Peer</firstname>
+    <lastname>Sahajan</lastname>
+    <age>24</age>
+    <gender>Male</gender>
+    <year>Master's</year>
+    <phone>123456</phone>
+    <address>UofM</address>
+  </person>
+  <person>
+    <firstname>John</firstname>
+    <lastname>Smith</lastname>
+    <age>35</age>
+    <gender>Male</gender>
+    <year>1</year>
+    <phone>234567</phone>
+    <address>Winnipeg</address>
+  </person>
+  <person>
+    <firstname>Jessica</firstname>
+    <lastname>Robert</lastname>
+    <age>30</age>
+    <gender>Female</gender>
+    <year>2</year>
+    <phone>2344567</phone>
+    <address>Toronto</address>
+  </person>
+</people>
